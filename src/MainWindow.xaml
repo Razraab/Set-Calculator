@@ -1,0 +1,49 @@
+﻿<Window x:Class="SetCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SetCalculator"
+        mc:Ignorable="d"
+        Title="Numeric Set Calculator" Height="500" Width="850">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ListBox FlowDirection="LeftToRight" x:Name="NumericSetControl" Grid.Row="1" 
+                 Grid.RowSpan="4" Grid.ColumnSpan="3" HorizontalContentAlignment="Center">
+        </ListBox>
+
+        <Button Grid.Column="3" Grid.Row="1" Height="40" HorizontalAlignment="Left" 
+                Margin="10" Width="40" FontSize="30" Content="+" Click="AddNumber"/>
+        <Button Grid.Column="3" Grid.Row="1" Height="40" HorizontalAlignment="Right" 
+                Margin="10" Width="40" FontSize="30" Content="-" Click="RemoveNumber"/>
+        <Button Grid.Column="4" Grid.Row="1" Margin="20" Height="40" FontSize="17" Content="Load" Click="LoadFromFile"/>
+        <Button Grid.Column="4" Grid.Row="4" Margin="20" Height="40" FontSize="17" Content="Clear" Click="Clear"/>
+
+        <TextBlock x:Name="SumControl" Grid.Row="2" Grid.Column="3" Text="Sum: " TextWrapping="Wrap"/>
+        <TextBlock x:Name="ArifmeticMeanControl" Grid.Row="3" Grid.Column="3" Text="Ar. mean: " TextWrapping="Wrap"/>
+        <TextBlock x:Name="MedianControl" Grid.Row="4" Grid.Column="3" Text="Median: " TextWrapping="Wrap"/>
+        <TextBlock x:Name="SpanControl" Grid.Row="2" Grid.Column="4" Text="Scope: " TextWrapping="Wrap"/>
+        <TextBlock x:Name="DispersionControl" Grid.Row="3" Grid.Column="4" Text="Dispersion: " TextWrapping="Wrap"/>
+    </Grid>
+</Window>
