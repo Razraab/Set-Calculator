@@ -1,0 +1,2 @@
+/NumericSetCalculator.csproj
+/NumericSetCalculator.csproj.user
